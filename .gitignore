@@ -12,6 +12,7 @@
 *.temp
 
 ## Private files - Credentials
+.git-credentials
 
 ## Data directories or files
 
