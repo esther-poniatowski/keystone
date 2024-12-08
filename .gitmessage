@@ -1,6 +1,3 @@
-pref(scope): Title
+pref(scope):
 
-
-
-Signed-off-by: Name <my.email@example.com>
-Co-authored-by: Name <user.email@example.com>
+Signed-off-by: Name <user.email@example.com>
