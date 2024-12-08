@@ -1,8 +1,32 @@
 # ProjectTemplate
 
-## Set up
+- [Description](#description)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
-To work on this project, follow the steps below:
+
+## Description
+
+...
+
+
+## Authors
+
+**First-Name Last-Name** | @github_handle | contact@example.com
+
+
+## Acknowledgments
+
+...
+
+
+## Installation
+
+> [!TIP]
+> To set up this project on a local machine, follow the steps below:
 
 ### Initialize a local copy
 
@@ -25,7 +49,7 @@ cd <repository-name>
    
 2. Register the file to use as the commit template:
 ```
-git config commit.template .github/commit-template.txt
+git config commit.template .git-message
 ```
    
 3. Verify the configuration:
@@ -33,6 +57,15 @@ git config commit.template .github/commit-template.txt
 git config --get commit.template
 ```
 
+
+## Usage
+
+...
+
+
+## Contributing
+
+...
 
 
 
