@@ -8,4 +8,4 @@ body:
     id: description
     attributes:
       label: Description
-      description: Description: why, what
+      description: Description
