@@ -1,6 +1,6 @@
 name: ProjectTemplate Issue Form
 description: General template for new issues
-title: "_():"
+title: "New Issue: Description"
 labels: ["feat"]
 assignees: esther-poniatowski
 body:
@@ -39,4 +39,3 @@ body:
         - 
       placeholder: |
         - Related to #<issue_number>
-
