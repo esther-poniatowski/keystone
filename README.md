@@ -47,6 +47,12 @@ git clone <repository-url>
 conda env create -f environment.yml
 ```
 
+2. Register the package in "editable mode":
+```
+conda activate <env-name>
+pip install -e /src/<package-name>
+```
+
 ## Usage
 
 ...
