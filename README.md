@@ -40,7 +40,30 @@
 git clone <repository-url>
 ```
 
-### Set Up the Commit Template
+### Create a virtual environment
+
+1. 
+
+## Usage
+
+...
+
+
+## Contributing
+
+> [!IMPORTANT]
+> To contribute effectively, please conform to those guidelines and use the provided templates.
+
+### Using the Issue Template
+
+To submit a new issue:
+
+1. In the repository page, navigate to the "Issues" tab and click on "New Issue".
+2. Select the issue template.
+3. Fill in the required information, following the structure provided.
+4. Add relevant labels, assignees, and milestone if applicable.
+
+### Using the Commit Message Template
 
 1. Navigate inside the repository directory:
 ```
@@ -57,15 +80,17 @@ git config commit.template .git-message
 git config --get commit.template
 ```
 
+> [!NOTE]
+> To write a commit message with this template, adhere to the following format:
+>
+> - Capitalize the subject, do not add a period at the end
+> - Limit the subject line to 50 characters
+> - Use the imperative mood in the subject line
+> - Separate subject from body with a blank line
+> - Wrap the body at 72 characters per line
+> - Use the body to explain what and why (not how)
+> - Add references to issues or other commits using [GitHub keywords](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
 
-## Usage
-
-...
-
-
-## Contributing
-
-...
 
 
 
