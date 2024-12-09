@@ -29,3 +29,14 @@ body:
       description: Requirements to close the issue
       value: |
         - [ ]
+        
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Related issues or PRs
+      value: |
+        - 
+      placeholder: |
+        - Related to #<issue_number>
+  
