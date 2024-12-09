@@ -42,7 +42,10 @@ git clone <repository-url>
 
 ### Create a virtual environment
 
-1. 
+1. Create an dedicated conda environment containing all the dependencies:
+```
+conda env create -f environment.yml
+```
 
 ## Usage
 
