@@ -78,11 +78,11 @@ To submit a new issue:
 cd <repository-name>
 ```
    
-2. Edit the commit template (`.git-message`) to specify the author name.
+2. Edit the commit template (`.gitmessage`) to specify the author name.
 
 3. Configure `git` to use this file as a commite template:
 ```
-git config commit.template .git-message
+git config commit.template .gitmessage
 ```
    
 4. Verify the configuration:
