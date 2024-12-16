@@ -1,42 +1,18 @@
-# `.gitignore` file for <project-name>
-# ------------------------------------
-# Syntax:
-# - `*` : Any number of characters
-# - `/` :  Directory
-# - `**/` : Any number of directories, including none
-# - `!` : Include
-# - `#` : Comment
+# `.gitignore` file for ProjectTemplate on gh-pages
+# -------------------------------------------------
 
-## Temporary files ---
+# Node.js dependencies
+node_modules/
+
+# Jekyll specific files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.jekyll-cache
+
+# Temporary files
+*.log
 *.tmp
-*.temp
-
-## Private files - Credentials
-.git-credentials
-
-## Data directories - files
-
-## System-specific Patterns
-.DS_Store
-
-## Environment-specific Patterns
-
-## Language-specific Patterns
-__pycache__/
-*.py[cod]
-
-## Tool-specific Patterns 
-
-### Jupyter Notebook
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-
-### Sphinx
-docs/_build/
-
-### Pytest
-.pytest_cache/
-
-### MyPy
-.mypy_cache/
-
+*.bak
+*.swp
