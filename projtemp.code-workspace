@@ -3,7 +3,7 @@
 	// Folders Included in the Workspace
 	"folders": [
 		{
-			"name": "project-template",
+			"name": "project-root",
 			"path": "."
 		}
 	],
