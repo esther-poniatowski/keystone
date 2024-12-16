@@ -1,0 +1,16 @@
+// Workspace-Specific Settings for Project Template
+{
+	// Folders Included in the Workspace
+	"folders": [
+		{
+			"name": "project-template",
+			"path": "."
+		}
+	],
+
+	// Workspace Settings
+	"settings": {},
+
+	// Recommended Extensions
+	"extensions": {}
+}
