@@ -28,7 +28,7 @@
 > [!TIP]
 > To set up this project on a local machine, follow the steps below:
 
-### Initialize a local copy
+### Initialize a local copy of the repository
 
 1. Navigate to the local directory where the root folder of the repository should reside.
   
@@ -63,14 +63,13 @@ pip install -e /src/<package-name>
 > [!IMPORTANT]
 > To contribute effectively, please conform to those guidelines and use the provided templates.
 
-### Using the Issue Template
+### Sumbitting Issues
 
 To submit a new issue:
 
 1. In the repository page, navigate to the "Issues" tab and click on "New Issue".
-2. Select the issue template.
-3. Fill in the required information, following the structure provided.
-4. Add relevant labels, assignees, and milestone if applicable.
+2. Select and fill the issue template.
+3. Add relevant labels, assignees, and milestone if applicable.
 
 ### Using the Commit Message Template
 
@@ -79,12 +78,14 @@ To submit a new issue:
 cd <repository-name>
 ```
    
-2. Register the file to use as the commit template:
+2. Edit the commit template (`.gitmessage`) to specify the author name.
+
+3. Configure `git` to use this file as a commite template:
 ```
-git config commit.template .git-message
+git config commit.template .gitmessage
 ```
    
-3. Verify the configuration:
+4. Verify the configuration:
 ```
 git config --get commit.template
 ```

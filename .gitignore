@@ -14,7 +14,7 @@
 ## Private files - Credentials
 .git-credentials
 
-## Data directories or files
+## Data directories - files
 
 ## System-specific Patterns
 .DS_Store
