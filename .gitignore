@@ -7,7 +7,7 @@
 # - `!` : Include
 # - `#` : Comment
 
-## Temporary files
+## Temporary files ---
 *.tmp
 *.temp
 
