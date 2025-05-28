@@ -1,4 +1,4 @@
-# ProjectTemplate
+# Project Name
 
 - [Description](#description)
 - [Authors](#authors)
