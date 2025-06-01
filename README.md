@@ -1,107 +1,160 @@
-# Project Name
+# {{ repo_name }}
 
-- [Description](#description)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
+[![Label](https://url.to/badge.svg)](https://url.to/target)
+
+[Brief Description: 2-3 sentences]
+
+**Project Status**: Active Development
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
+- [Support](#support)
 - [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
 
+## Overview
 
-## Description
+---
 
-...
+## Features
 
+- [ ] **Feature 1:** Description.
+- [ ] **Feature 2:** Description.
 
-## Authors
-
-**First-Name Last-Name** | @github_handle | contact@example.com
-
-
-## Acknowledgments
-
-...
-
+---
 
 ## Installation
 
-> [!TIP]
-> To set up this project on a local machine, follow the steps below:
+To install the package and its dependencies, use one of the following methods:
 
-### Initialize a local copy of the repository
+### Using Pip Installs Packages
 
-1. Navigate to the local directory where the root folder of the repository should reside.
-  
-2. Copy the URL of the project in the "Code" section of the main page.<br>
-   Format: ```git@github.com:<owner-name>/<repository-name>.git```
-  
-3. Clone the repository:
-```
-git clone <repository-url>
+Install the package from the GitHub repository URL via `pip`:
+
+```bash
+pip install git+https://github.com/{{ user_name }}/{{ repo_name }}.git
 ```
 
-### Create a virtual environment
+### Using Conda
 
-1. Create an dedicated conda environment containing all the dependencies:
-```
-conda env create -f environment.yml
+Install the package from the private channel {{ channel_name }}:
+
+```bash
+conda install {{ package_name }} -c {{ channel_name }}
 ```
 
-2. Register the package in "editable mode":
-```
-conda activate <env-name>
-pip install -e /src/<package-name>
-```
+### From Source
+
+1. Clone the repository:
+
+      ```bash
+      git clone https://github.com/{{ user_name }}/{{ repo_name }}.git
+      ```
+
+2. Create a dedicated virtual environment:
+
+      ```bash
+      cd {{ repo_name }}
+      conda env create -f environment.yml
+      ```
+
+---
 
 ## Usage
 
-...
+The following examples illustrate the standard usage of the package. For a
+complete example, refer to the documentation in the `examples/` directory.
 
+### Command Line Interface (CLI)
+
+To [perform some operation], invoke the following command:
+
+```sh
+{{ package_name }} [options] [arguments]
+```
+
+### Programmatic Usage
+
+To use the package programmatically in Python:
+
+1. Import the package:
+
+```python
+import {{ package_name }}
+```
+
+---
+
+## Configuration
+
+### Environment Variables
+
+|Variable|Description|Default|Required|
+|---|---|---|---|
+|`VAR_1`|Description 1|None|Yes|
+|`VAR_2`|Description 2|`false`|No|
+
+### Configuration File
+
+Configuration options are specified in the `config/` directory using YAML files.
+
+See the canonical configuration schema at: [`config/default.yaml`](config/default.yaml).
+
+```yaml
+var_1: value1
+var_2: value2
+```
+
+---
+
+## Documentation
+
+- [User Guide](https://{{ user_name }}.github.io/{{ repo_name }}/guide/)
+- [API Documentation](https://{{ user_name }}.github.io/{{ repo_name }}/api/)
+
+> [!NOTE]
+> Documentation can be viewed in Markdown format from the `docs/` directory.
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/{{ user_name }}/{{ repo_name }}/issues)
+- **Email**: `contact@example.com`
+
+---
 
 ## Contributing
 
-> [!IMPORTANT]
-> To contribute effectively, please conform to those guidelines and use the provided templates.
+Please refer to the [contribution guidelines](CONTRIBUTING.md).
 
-### Sumbitting Issues
+---
 
-To submit a new issue:
+## Acknowledgments
 
-1. In the repository page, navigate to the "Issues" tab and click on "New Issue".
-2. Select and fill the issue template.
-3. Add relevant labels, assignees, and milestone if applicable.
+### Authors & Contributors
 
-### Using the Commit Message Template
+**Author** | @github_handle | `contact@example.com`
 
-1. Navigate inside the repository directory:
-```
-cd <repository-name>
-```
-   
-2. Edit the commit template (`.gitmessage`) to specify the author name.
+For academic use, please cite using the GitHub "Cite this repository" feature to
+generate a citation in various formats.
 
-3. Configure `git` to use this file as a commite template:
-```
-git config commit.template .gitmessage
-```
-   
-4. Verify the configuration:
-```
-git config --get commit.template
-```
+Alternatively, refer to the metadata provided in the `CITATION.cff` file.
 
-> [!NOTE]
-> To write a commit message with this template, adhere to the following format:
->
-> - Capitalize the subject, do not add a period at the end
-> - Limit the subject line to 50 characters
-> - Use the imperative mood in the subject line
-> - Separate subject from body with a blank line
-> - Wrap the body at 72 characters per line
-> - Use the body to explain what and why (not how)
-> - Add references to issues or other commits using [GitHub keywords](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+### Third-Party Dependencies
 
+- **[Library A](link)** - Purpose
+- **[Library B](link)** - Purpose
 
+---
 
+## License
 
-
+This project is licensed under the [GPL license](LICENSE).
