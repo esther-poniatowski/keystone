@@ -1,8 +1,22 @@
+<!--
+TODO: Replace all placeholders of the form {{ ... }} with project-specific values.
+
+- {{ repo_name }}          : Repository name
+- {{ user_name }}          : GitHub username of the project owner
+- {{ package_name }}       : Python package name
+- {{ channel_name }}       : Conda channel name
+- {{ github_handle }}      : GitHub handle of the author
+- {{ contact@example.com }}: Contact email address
+
+TODO: Review and adapt all descriptive content to reflect the specific details
+of the project (e.g., project description, feature list, variable names, file
+paths, command-line examples, documentation links).
+-->
 # {{ repo_name }}
 
 [![Label](https://url.to/badge.svg)](https://url.to/target)
 
-[Brief Description: 2-3 sentences]
+Project Description (2-3 sentences)
 
 **Project Status**: Active Development
 
@@ -27,7 +41,7 @@
 
 ## Features
 
-- [ ] **Feature 1:** Description.
+- [X] **Feature 1:** Description.
 - [ ] **Feature 2:** Description.
 
 ---
@@ -71,22 +85,17 @@ conda install {{ package_name }} -c {{ channel_name }}
 
 ## Usage
 
-The following examples illustrate the standard usage of the package. For a
-complete example, refer to the documentation in the `examples/` directory.
-
 ### Command Line Interface (CLI)
 
-To [perform some operation], invoke the following command:
+To display the list of available commands and options:
 
 ```sh
-{{ package_name }} [options] [arguments]
+{{ package_name }} --help
 ```
 
 ### Programmatic Usage
 
 To use the package programmatically in Python:
-
-1. Import the package:
 
 ```python
 import {{ package_name }}
@@ -105,9 +114,9 @@ import {{ package_name }}
 
 ### Configuration File
 
-Configuration options are specified in the `config/` directory using YAML files.
+Configuration options are specified in YAML files located in the `config/` directory.
 
-See the canonical configuration schema at: [`config/default.yaml`](config/default.yaml).
+The canonical configuration schema is provided in [`config/default.yaml`](config/default.yaml).
 
 ```yaml
 var_1: value1
@@ -122,12 +131,13 @@ var_2: value2
 - [API Documentation](https://{{ user_name }}.github.io/{{ repo_name }}/api/)
 
 > [!NOTE]
-> Documentation can be viewed in Markdown format from the `docs/` directory.
+> Documentation can also be browsed locally from the [`docs/`](docs/) directory.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/{{ user_name }}/{{ repo_name }}/issues)
-- **Email**: `contact@example.com`
+**Issues**: [GitHub Issues](https://github.com/{{ user_name }}/{{ repo_name }}/issues)
+
+**Email**: `{{ contact@example.com }}`
 
 ---
 
@@ -141,12 +151,14 @@ Please refer to the [contribution guidelines](CONTRIBUTING.md).
 
 ### Authors & Contributors
 
-**Author** | @github_handle | `contact@example.com`
+**Author**: @{{ github_handle }}
+
+**Contact**: `{{ contact@example.com }}`
 
 For academic use, please cite using the GitHub "Cite this repository" feature to
 generate a citation in various formats.
 
-Alternatively, refer to the metadata provided in the `CITATION.cff` file.
+Alternatively, refer to the [citation metadata](CITATION.cff).
 
 ### Third-Party Dependencies
 
@@ -157,4 +169,4 @@ Alternatively, refer to the metadata provided in the `CITATION.cff` file.
 
 ## License
 
-This project is licensed under the [GPL license](LICENSE).
+This project is licensed under the terms of the [GNU General Public License v3.0](LICENSE).
