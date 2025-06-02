@@ -1,16 +1,17 @@
-// Workspace-Specific Settings for Project Template
+// =================================================================================================
+// VS Code Workspace File for {{ project_name }}
+//
+// Defines the project folder structure for the workspace.
+// External configuration files are located in the `.vscode/` subdirectory:
+//   - `settings.json`  : Editor behavior, environment, and tools
+//   - `launch.json`    : Debugging configurations
+//   - `extensions.json`: Extension recommendations
+// =================================================================================================
 {
-	// Folders Included in the Workspace
-	"folders": [
-		{
-			"name": "project-root",
-			"path": "."
-		}
-	],
-
-	// Workspace Settings
-	"settings": {},
-
-	// Recommended Extensions
-	"extensions": {}
+  "folders": [
+    {
+      "name": "project_name",
+      "path": "."
+    }
+  ]
 }
