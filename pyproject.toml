@@ -7,7 +7,7 @@
 # - {{ author_name }} : Author's name
 # - {{ email }}       : Author's email
 # - {{ description }} : Brief description of the package
-# - {{ user_name }}   : GitHub username
+# - {{ github_user }}   : GitHub username
 # - {{ repo_name }}   : GitHub repository name
 # ==================================================================================================
 
@@ -34,7 +34,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 3 - Alpha"
 ]
-urls = {homepage = "https://github.com/{{ user_name }}/{{ repo_name }}"}
+urls = {homepage = "https://github.com/{{ github_user }}/{{ repo_name }}"}
 
 
 # --- Dependencies ---------------------------------------------------------------------------------

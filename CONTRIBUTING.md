@@ -23,7 +23,7 @@ steps to set up a development environment:
 
    ```sh
    cd /path/to/local/directory
-   git clone git@github.com:{{ user_name }}/{{ repo_name }}.git
+   git clone git@github.com:{{ github_user }}/{{ repo_name }}.git
    ```
 
 2. Create a virtual environment containing the development dependencies:

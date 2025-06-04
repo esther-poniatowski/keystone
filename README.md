@@ -2,10 +2,9 @@
 TODO: Replace all placeholders of the form {{ ... }} with project-specific values.
 
 - {{ repo_name }}          : Repository name
-- {{ user_name }}          : GitHub username of the project owner
+- {{ github_user }}        : GitHub username of the project owner
 - {{ package_name }}       : Python package name
 - {{ channel_name }}       : Conda channel name
-- {{ github_handle }}      : GitHub handle of the author
 - {{ contact@example.com }}: Contact email address
 
 TODO: Review and adapt all descriptive content to reflect the specific details
@@ -55,7 +54,7 @@ To install the package and its dependencies, use one of the following methods:
 Install the package from the GitHub repository URL via `pip`:
 
 ```bash
-pip install git+https://github.com/{{ user_name }}/{{ repo_name }}.git
+pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
 ```
 
 ### Using Conda
@@ -71,7 +70,7 @@ conda install {{ package_name }} -c {{ channel_name }}
 1. Clone the repository:
 
       ```bash
-      git clone https://github.com/{{ user_name }}/{{ repo_name }}.git
+      git clone https://github.com/{{ github_user }}/{{ repo_name }}.git
       ```
 
 2. Create a dedicated virtual environment:
@@ -127,15 +126,15 @@ var_2: value2
 
 ## Documentation
 
-- [User Guide](https://{{ user_name }}.github.io/{{ repo_name }}/guide/)
-- [API Documentation](https://{{ user_name }}.github.io/{{ repo_name }}/api/)
+- [User Guide](https://{{ github_user }}.github.io/{{ repo_name }}/guide/)
+- [API Documentation](https://{{ github_user }}.github.io/{{ repo_name }}/api/)
 
 > [!NOTE]
 > Documentation can also be browsed locally from the [`docs/`](docs/) directory.
 
 ## Support
 
-**Issues**: [GitHub Issues](https://github.com/{{ user_name }}/{{ repo_name }}/issues)
+**Issues**: [GitHub Issues](https://github.com/{{ github_user }}/{{ repo_name }}/issues)
 
 **Email**: `{{ contact@example.com }}`
 
@@ -151,7 +150,7 @@ Please refer to the [contribution guidelines](CONTRIBUTING.md).
 
 ### Authors & Contributors
 
-**Author**: @{{ github_handle }}
+**Author**: @{{ github_user }}
 
 **Contact**: `{{ contact@example.com }}`
 
