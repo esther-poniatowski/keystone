@@ -1,5 +1,5 @@
 # ==================================================================================================
-# Black Configuration File for {{ package_name }} Package
+# Black Configurations for {{ package_name }} Package
 #
 # File: `config/tools/black.toml`
 #
@@ -26,15 +26,17 @@
 #
 # Notes
 # -----
+# Configuration file:
+#
 # This dedicated configuration file reproduces the structure of the `pyproject.toml` file that is
 # conventionally detected by the Black formatter. It allows for a clear separation of tool-specific
 # settings from the main project configuration.
 #
-# # Exclusions match:
+# Exclusions:
 #
-# - Directories containing non-source or external files: `data`, `docs`, `notebooks`, `scripts`.
+# - Configuration files not intended for formatting: `.*conf.*`, `config/` directory.
+# - Jupyter Notebook files: `*.ipynb`.
 # - Stubs that may contain static type annotations not maintained manually: `stubs`.
-# - Configuration files not intended for formatting: `.*conf.*`.
 #
 # The `force-exclude` directive ensures that specific paths are never formatted, even if passed
 # explicitly to the Black command. This behavior is required to enforce exclusions in all contexts,
@@ -43,6 +45,33 @@
 #
 # The regular expressions are independent of the path separator style to ensure cross-platform
 # compatibility.
+#
+# Line Length Synchronization:
+#
+# The line length should be consistent across all the tools used in the development environment:
+#
+# - VS Code (in `settings.json`):
+#
+#   ```json
+#   {
+#     "editor.rulers": {{ line_length }}
+#     "rewrap.wrappingColumn": {{ line_length }}
+#   }
+#   ```
+#
+# - Pylint (in `config/tools/pylintrc.ini`):
+#
+#   ```ini
+#   [FORMAT]
+#   max-line-length = {{ line_length }}
+#   ```
+#
+# All formatting and style-checking tools should use the same value to prevent formatting conflicts
+# and to preserve structural coherence in diffs and collaborative development workflows.
+#
+# See Also
+# --------
+# [Black Documentation](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file)
 # ==================================================================================================
 
 [tool.black]
@@ -56,16 +85,13 @@ line-length = 100
 force-exclude = '''
 (
   (^|/)(
-    data
-    | docs
-    | notebooks
-    | scripts
-    | stubs
+    stubs
+    | config
   )(/|$)
-  | .*conf.*
+  | (^|/)conf\.py$
+  | \.ipynb$
 )
 '''
-
 
 # --- Visual Output --------------------------------------------------------------------------------
 
