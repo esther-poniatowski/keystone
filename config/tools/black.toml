@@ -1,0 +1,72 @@
+# ==================================================================================================
+# Black Configuration File for {{ package_name }} Package
+#
+# File: `config/tools/black.toml`
+#
+# Usage
+# -----
+# From the terminal, pass this configuration file to the Black code formatter:
+#
+# ```sh
+# black --config config/tools/black.toml .
+# ```
+#
+# In VS Code `settings.json` file, set the Black extension as the default formatter for Python files
+# and pass this configuration:
+#
+# ```json
+# {
+#  "[python]": {
+#			"editor.defaultFormatter": "ms-python.black-formatter",
+#			"editor.formatOnSave": true
+#		},
+#		"black-formatter.args": ["--config", "./config/tools/black.toml"],
+# }
+# ```
+#
+# Notes
+# -----
+# This dedicated configuration file reproduces the structure of the `pyproject.toml` file that is
+# conventionally detected by the Black formatter. It allows for a clear separation of tool-specific
+# settings from the main project configuration.
+#
+# # Exclusions match:
+#
+# - Directories containing non-source or external files: `data`, `docs`, `notebooks`, `scripts`.
+# - Stubs that may contain static type annotations not maintained manually: `stubs`.
+# - Configuration files not intended for formatting: `.*conf.*`.
+#
+# The `force-exclude` directive ensures that specific paths are never formatted, even if passed
+# explicitly to the Black command. This behavior is required to enforce exclusions in all contexts,
+# including within the Visual Studio Code extension. In particular, VS Code run Blacks by explicitly
+# passing the path to the file currently open in the editor, which bypasses the `exclude` directive.
+#
+# The regular expressions are independent of the path separator style to ensure cross-platform
+# compatibility.
+# ==================================================================================================
+
+[tool.black]
+
+# --- Formatting -----------------------------------------------------------------------------------
+
+line-length = 100
+
+# --- Exclusions -----------------------------------------------------------------------------------
+
+force-exclude = '''
+(
+  (^|/)(
+    data
+    | docs
+    | notebooks
+    | scripts
+    | stubs
+  )(/|$)
+  | .*conf.*
+)
+'''
+
+
+# --- Visual Output --------------------------------------------------------------------------------
+
+color = true
