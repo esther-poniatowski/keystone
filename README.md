@@ -1,15 +1,15 @@
 <!--
-TODO: Replace all placeholders of the form {{ ... }} with project-specific values.
+TODO: Replace all placeholders of the form `{{ ... }}` with project-specific values.
 
-- {{ repo_name }}          : Repository name
-- {{ github_user }}        : GitHub username of the project owner
-- {{ package_name }}       : Python package name
-- {{ channel_name }}       : Conda channel name
-- {{ contact@example.com }}: Contact email address
+- `{{ repo_name }}`          : Repository name
+- `{{ github_user }}`        : GitHub username of the project owner
+- `{{ package_name }}`       : Python package name
+- `{{ channel_name }}`       : Conda channel name
+- `{{ contact@example.com }}`: Contact email address
 
-TODO: Review and adapt all descriptive content to reflect the specific details
-of the project (e.g., project description, feature list, variable names, file
-paths, command-line examples, documentation links).
+TODO: Review and adapt all descriptive content to reflect the specific details of the project (e.g.,
+project description, feature list, variable names, file paths, command-line examples, documentation
+links).
 -->
 # {{ repo_name }}
 

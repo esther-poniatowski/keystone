@@ -1,5 +1,15 @@
+<!--
+TODO: Replace all placeholders of the form `{{ ... }}` with project-specific values.
 
-# Contributing
+- `{{ repo_name }}`          : Repository name
+- `{{ github_user }}`        : GitHub username of the project owner
+- `{{ package_name }}`       : Python package name
+- `{{ env_name }}`           : Conda environment name
+
+TODO: Review and adapt all descriptive content to reflect the specific details of the project.
+-->
+
+# Contributing to "{{ repo_name }}"
 
 > [!IMPORTANT]
 > To contribute effectively, please conform to those guidelines and use the provided templates.
@@ -33,6 +43,9 @@ steps to set up a development environment:
    conda env create -f environment.yml
    ```
 
+   By default, the environment will be named `{{ env_name }}`, as specified in the `environment.yml`
+   file. This name can be modified by passing the `-n` option.
+
 3. Register the packages in "editable mode":
 
    ```sh
@@ -42,21 +55,16 @@ steps to set up a development environment:
 
 ### Using the Commit Message Template
 
-1. Navigate inside the repository directory:
+1. Edit the commit template (`.gitmessage`, at the root of the repository) to specify the name and
+   email address of the committer.
 
-   ```sh
-   cd <repository-name>
-   ```
-
-2. Edit the commit template (`.gitmessage`) to specify the author name.
-
-3. Configure `git` to use this file as a commit template:
+2. Configure `git` to use this file as a commit template:
 
    ```sh
    git config commit.template .gitmessage
    ```
 
-4. Verify the configuration:
+3. Verify the configuration:
 
    ```sh
    git config --get commit.template
