@@ -6,18 +6,20 @@ TODO: Replace all placeholders of the form `{{ ... }}` with project-specific val
 - `{{ package_name }}`       : Python package name
 - `{{ channel_name }}`       : Conda channel name
 - `{{ contact@example.com }}`: Contact email address
+- `{{ description }}`        : Short project description, as it appears on the repository page
 
 TODO: Review and adapt all descriptive content to reflect the specific details of the project (e.g.,
-project description, feature list, variable names, file paths, command-line examples, documentation
-links).
+badges, feature list, variable names, file paths, command-line examples, documentation links).
 -->
 # {{ repo_name }}
 
-[![Label](https://url.to/badge.svg)](https://url.to/target)
+[[![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](#installation)
+[![Maintenance](https://img.shields.io/maintenance/yes/2025)]()
+[![Last Commit](https://img.shields.io/github/last-commit/{{ github_user }}/{{ package_name }})](https://github.com/{{ github_user }}/{{ package_name }}/commits/main)
+[![Python](https://img.shields.io/badge/python-supported-blue)](https://www.python.org/)
+[![License: GPL](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
 
-Project Description (2-3 sentences)
-
-**Project Status**: Active Development
+{{ description }}
 
 ---
 
