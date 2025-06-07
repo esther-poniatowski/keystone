@@ -1,6 +1,21 @@
-"""Package initialization for package_name."""
+"""
+Package: `{{ package_name }}`
 
-from .module_name import main
+File: `__init__.py`
 
-__all__ = ["main"]
+Package initialization:
+-
+- Exposes the main module and version information.
 
+Modules
+-------
+module_name:
+    Example module with minimal functionality.
+"""
+from importlib.metadata import version
+
+__version__ = version(__package__)
+__author__ = "{{ author_name }}"
+__email__ = "{{ email }}"
+
+__all__ = []
