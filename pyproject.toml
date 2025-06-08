@@ -22,7 +22,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "{{ package_name }}"
-version = "0.1.0"
+version = "0.0.0"
 authors = [{name = "{{ author_name }}", email = "{{ email }}"}]
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
@@ -58,25 +58,3 @@ where = ["src"]
 
 [project.scripts]
 loretex = "{{ package_name }}.cli:app"
-
-
-# --- Versioning -----------------------------------------------------------------------------------
-
-[tool.semantic_release]
-branch = "main"
-
-version_toml = [
-	"pyproject.toml:project.version",
-	"CITATION.cff:version"
-]
-version_variables = ["src/{{ package_name }}/__version__.py:__version__"]
-
-commit_parser = "angular"
-major_versions = ["BREAKING CHANGE"]
-minor_versions = ["feat"]
-patch_versions = ["fix", "perf", "refactor"]
-
-tag_format = "v{version}"
-
-[tool.semantic_release.changelog]
-changelog_file = "docs/CHANGELOG.md"
