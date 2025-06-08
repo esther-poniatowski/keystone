@@ -5,24 +5,29 @@
 #
 # - `{{ repo_name }}`          : Repository name
 # - `{{ github_user }}`        : GitHub username of the project owner
-# - `{{ version }}`            : Version of the project
 # - `{{ doi }}`                : DOI for the project
 # - `{{ first_name }}`         : First name of the author
 # - `{{ last_name }}`          : Last name of the author
 # - `{{ orcid }}`              : ORCID of the author (e.g., "0000-0002-1825-0097")
 # - `{{ affiliation }}`        : Affiliation of the author (e.g., institution or organization)
+# - `{{ year }}`               : Year of the project release
 # - `{{ license }}`            : License under which the project is released
+#
+# Notes
+# -----
+# The `version` field is automatically updated by the `python-semantic-release` tool. It should be
+# set to a valid semantic version placeholder (e.g., "0.0.0", "1.0.0") to be recognized by the tool.
 # ==================================================================================================
 cff-version: 1.2.0
 message: "Please cite this codebase using the following metadata."
 title: "{{ repo_name }}"
-version: "{{ version }}"
+version: "0.0.0"
 doi: "{{ doi }}"
 authors:
   - family-names: "{{ last_name }}"
     given-names: "{{ first_name }}"
     orcid: "{{ orcid }}"
     affiliation: "{{ affiliation }}"
-year: 2025
+year: "{{ year }}"
 license: "{{ license }}"
 repository-code: "https://github.com/{{ github_user }}/{{ repo_name }}"
