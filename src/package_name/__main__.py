@@ -1,16 +1,16 @@
 """
-Command-line entry point for the `{{ package_name }}` package.
+Entry point for the `{{ package_name }}` package, invoked as a module.
 
 Usage
 -----
-To invoke the package::
+To launch the command-line interface, execute::
 
     python -m {{ package_name }}
 
 
 See Also
 --------
-{{ package_name }}.cli: Command-line interface module for the package.
+{{ package_name }}.cli: Module implementing the application's command-line interface.
 """
 from .cli import app
 
