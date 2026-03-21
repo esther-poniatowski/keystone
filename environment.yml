@@ -1,28 +1,30 @@
-name: ProjectTemplate
+name: {{ env_name }}
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python
-  - black
-  - doctest
-  - esbonio # for sphinx
-  - ipykernel
-  - jupyter
-  - matplotlib
-  - mypy
+  - python=3.12
+  # Data manipulation and formats
+  - pyyaml                 # YAML file handling
+  - types-pyyaml           # type stubs for PyYAML
+  # Development tools
+  - black                  # code formatting
+  - mypy                   # static type checking
   - mypy_extensions
-  - numpy
-  - pandas
-  - pip
-  - pylint
-  - pyright
+  - pylint                 # code linting
+  - pyright                # static type analysis
+  # Testing
   - pytest
   - pytest-mock
-  - pytest-pylint
-  - scipy
-  - sphinx
-  - sphinxcontrib
-  - sphinx-needs
-  - sphinx_rtd_theme
-  - scikit-learn
+  - pytest-cov
+  - pytest-pylint          # Pylint plugin for Pytest
+  # Documentation
+  - sphinx                 # documentation generator
+  - myst-parser            # Markdown support for Sphinx
+  - sphinx-rtd-theme       # ReadTheDocs theme
+  - sphinx-needs           # for requirements and specifications in Sphinx
+  - esbonio                # language server for Sphinx
+  # CLI
+  - typer                  # command line interface
+  - rich                   # terminal output formatting
+variables:

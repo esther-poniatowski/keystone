@@ -57,4 +57,4 @@ where = ["src"]
 # --- CLI Entry Points -----------------------------------------------------------------------------
 
 [project.scripts]
-loretex = "{{ package_name }}.cli:app"
+{{ package_name }} = "{{ package_name }}.cli:app"
