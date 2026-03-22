@@ -1,42 +1,36 @@
-# `.gitignore` file for <project-name>
-# ------------------------------------
-# Syntax:
-# - `*` : Any number of characters
-# - `/` :  Directory
-# - `**/` : Any number of directories, including none
-# - `!` : Include
-# - `#` : Comment
+# gitignore file for <project-name>
+# ----------------------------------
 
-## Temporary files ---
+## Temporary files
 *.tmp
 *.temp
 
-## Private files - Credentials
+## Credentials
 .git-credentials
 
-## Data directories - files
-
-## System-specific Patterns
+## macOS
 .DS_Store
 
-## Environment-specific Patterns
-
-## Language-specific Patterns
+## Python Cache
 __pycache__/
 *.py[cod]
 
-## Tool-specific Patterns 
+## Python Distribution / Packaging
+*.egg-info/
+*.egg
+dist/
+build/
 
-### Jupyter Notebook
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
+## Test Coverage
+.coverage
+htmlcov/
 
-### Sphinx
-docs/_build/
-
-### Pytest
+## Tool Caches
 .pytest_cache/
-
-### MyPy
 .mypy_cache/
 
+## Jupyter Notebook
+.ipynb_checkpoints/
+
+## Documentation Build
+docs/_build/
