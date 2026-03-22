@@ -7,6 +7,8 @@ Welcome to the {{ package_name }} documentation.
 :caption: User Guide
 
 guide/getting-started
+guide/configuration
+guide/cli-reference
 ```
 
 ```{toctree}

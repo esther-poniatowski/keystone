@@ -1,17 +1,31 @@
 # Getting Started
 
+## Prerequisites
+
+- Python >= 3.12
+- conda (recommended) or pip
+
 ## Installation
 
 Install {{ package_name }} via pip:
 
 ```sh
-pip install {{ package_name }}
+pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
 ```
 
 Or via conda:
 
 ```sh
-conda install -c eresthanaconda {{ package_name }}
+conda install -c {{ channel_name }} {{ package_name }}
+```
+
+Or from source:
+
+```sh
+git clone https://github.com/{{ github_user }}/{{ repo_name }}.git
+cd {{ repo_name }}
+conda env create -f environment.yml
+conda activate {{ package_name }}
 ```
 
 ## Quick Start
@@ -19,3 +33,9 @@ conda install -c eresthanaconda {{ package_name }}
 ```sh
 {{ package_name }} --help
 ```
+
+## Next Steps
+
+- [Configuration](configuration.md) -- Configure the package for your workflow.
+- [CLI Reference](cli-reference.md) -- Full list of commands and options.
+- [API Reference](../api/index.md) -- Python API documentation.

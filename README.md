@@ -1,23 +1,25 @@
 <!--
 TODO: Replace all placeholders of the form `{{ ... }}` with project-specific values.
 
-- `{{ repo_name }}`          : Repository name
+- `{{ repo_name }}`          : Repository name (e.g., architekta)
 - `{{ github_user }}`        : GitHub username of the project owner
-- `{{ package_name }}`       : Python package name
-- `{{ channel_name }}`       : Conda channel name
+- `{{ package_name }}`       : Python package name (import name)
+- `{{ channel_name }}`       : Conda channel name (e.g., eresthanaconda)
 - `{{ contact@example.com }}`: Contact email address
-- `{{ description }}`        : Short project description, as it appears on the repository page
+- `{{ description }}`        : One-line project description
 
-TODO: Review and adapt all descriptive content to reflect the specific details of the project (e.g.,
-badges, feature list, variable names, file paths, command-line examples, documentation links).
+TODO: Review and adapt all descriptive content to reflect the specific details of the
+project (e.g., feature list, command-line examples, configuration options).
+
+TODO: Remove sections marked OPTIONAL if they do not apply to the project.
 -->
 # {{ repo_name }}
 
-[[![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](#installation)
-[![Maintenance](https://img.shields.io/maintenance/yes/2025)]()
-[![Last Commit](https://img.shields.io/github/last-commit/{{ github_user }}/{{ package_name }})](https://github.com/{{ github_user }}/{{ package_name }}/commits/main)
-[![Python](https://img.shields.io/badge/python-supported-blue)](https://www.python.org/)
-[![License: GPL](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
+[![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](#installation)
+[![Maintenance](https://img.shields.io/maintenance/yes/2026)]()
+[![Last Commit](https://img.shields.io/github/last-commit/{{ github_user }}/{{ repo_name }})](https://github.com/{{ github_user }}/{{ repo_name }}/commits/main)
+[![Python](https://img.shields.io/badge/python-%E2%89%A53.12-blue)](https://www.python.org/)
+[![License: GPL](https://img.shields.io/badge/License-GPL--3.0-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
 
 {{ description }}
 
@@ -28,6 +30,7 @@ badges, feature list, variable names, file paths, command-line examples, documen
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
@@ -37,6 +40,23 @@ badges, feature list, variable names, file paths, command-line examples, documen
 - [License](#license)
 
 ## Overview
+
+<!--
+Provide a 2-4 sentence summary of what the project does and why it exists.
+Then include Motivation and Advantages subsections.
+-->
+
+### Motivation
+
+<!--
+Explain the problem this project solves. What pain point or gap does it address?
+-->
+
+### Advantages
+
+<!--
+List 3-5 key advantages of this project over alternatives or manual approaches.
+-->
 
 ---
 
@@ -51,23 +71,23 @@ badges, feature list, variable names, file paths, command-line examples, documen
 
 To install the package and its dependencies, use one of the following methods:
 
-### Using Pip Installs Packages
+### Using pip
 
-Install the package from the GitHub repository URL via `pip`:
+Install the package from the GitHub repository URL:
 
 ```bash
 pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
 ```
 
-### Using Conda
+### Using conda
 
-Install the package from the private channel {{ channel_name }}:
+Install the package from the {{ channel_name }} channel:
 
 ```bash
 conda install {{ package_name }} -c {{ channel_name }}
 ```
 
-### From Source
+### From source
 
 1. Clone the repository:
 
@@ -75,12 +95,37 @@ conda install {{ package_name }} -c {{ channel_name }}
       git clone https://github.com/{{ github_user }}/{{ repo_name }}.git
       ```
 
-2. Create a dedicated virtual environment:
+2. Create a dedicated virtual environment and install:
 
       ```bash
       cd {{ repo_name }}
       conda env create -f environment.yml
+      conda activate {{ package_name }}
       ```
+
+---
+
+## Quick Start
+
+<!--
+Provide a minimal, concrete example that gets the user from zero to a working result.
+This should be copy-pasteable and demonstrate the core value proposition.
+Include both CLI and Python API examples if applicable.
+-->
+
+### CLI
+
+```sh
+{{ package_name }} --help
+```
+
+### Python
+
+```python
+import {{ package_name }}
+
+{{ package_name }}.info()
+```
 
 ---
 
@@ -88,7 +133,10 @@ conda install {{ package_name }} -c {{ channel_name }}
 
 ### Command Line Interface (CLI)
 
-To display the list of available commands and options:
+<!--
+Document the main CLI commands with concrete examples and expected output.
+Show real commands, not just --help. Include at least one end-to-end example.
+-->
 
 ```sh
 {{ package_name }} --help
@@ -96,7 +144,10 @@ To display the list of available commands and options:
 
 ### Programmatic Usage
 
-To use the package programmatically in Python:
+<!--
+Show how to use the package as a Python library. Include import statements,
+object construction, and a representative workflow.
+-->
 
 ```python
 import {{ package_name }}
@@ -108,10 +159,10 @@ import {{ package_name }}
 
 ### Environment Variables
 
-|Variable|Description|Default|Required|
-|---|---|---|---|
-|`VAR_1`|Description 1|None|Yes|
-|`VAR_2`|Description 2|`false`|No|
+| Variable | Description | Default | Required |
+| -------- | ----------- | ------- | -------- |
+| `VAR_1` | Description. | None | Yes |
+| `VAR_2` | Description. | `false` | No |
 
 ### Configuration File
 
@@ -133,6 +184,25 @@ var_2: value2
 
 > [!NOTE]
 > Documentation can also be browsed locally from the [`docs/`](docs/) directory.
+
+---
+
+<!-- OPTIONAL: Include for projects with non-trivial internal structure. -->
+## Architecture
+
+<!--
+Describe the high-level module organization and architectural layers.
+Include a table of modules or a diagram if helpful.
+-->
+
+| Layer | Modules | Responsibility |
+| ----- | ------- | -------------- |
+| Domain | `module_a` | Core business logic |
+| Application | `module_b` | Use-case orchestration |
+| Infrastructure | `module_c` | File I/O, config loading |
+| Adapters | `cli` | CLI interface |
+
+---
 
 ## Support
 
@@ -163,8 +233,8 @@ Alternatively, refer to the [citation metadata](CITATION.cff).
 
 ### Third-Party Dependencies
 
-- **[Library A](link)** - Purpose
-- **[Library B](link)** - Purpose
+- **[Library A](link)** -- Purpose
+- **[Library B](link)** -- Purpose
 
 ---
 
