@@ -69,11 +69,9 @@ List 3-5 key advantages of this project over alternatives or manual approaches.
 
 ## Installation
 
-To install the package and its dependencies, use one of the following methods:
-
 ### Using pip
 
-Install the package from the GitHub repository URL:
+Install from the GitHub repository:
 
 ```bash
 pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
@@ -81,7 +79,7 @@ pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
 
 ### Using conda
 
-Install the package from the {{ channel_name }} channel:
+Install from the {{ channel_name }} channel:
 
 ```bash
 conda install {{ package_name }} -c {{ channel_name }}
