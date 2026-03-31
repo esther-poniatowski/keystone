@@ -2,10 +2,8 @@
 
 ## Configuration File
 
-{{ package_name }} reads configuration from YAML files located in the `config/`
-directory.
-
-The canonical configuration schema is provided in `config/default.yaml`.
+{{ package_name }} reads its configuration from YAML files located in the `config/`
+directory. The canonical schema is defined in `config/default.yaml`.
 
 ```yaml
 # Example configuration
@@ -22,7 +20,7 @@ var_2: value2
 
 ## Precedence
 
-Configuration is resolved in the following order (highest priority first):
+Configuration values resolve in the following order (highest priority first):
 
 1. Command-line arguments
 2. Environment variables

@@ -1,14 +1,15 @@
 # {{ package_name }}
 
-Welcome to the {{ package_name }} documentation.
+{{ description }}
 
 ```{toctree}
 :maxdepth: 2
 :caption: User Guide
 
-guide/getting-started
-guide/configuration
+guide/installation
+guide/usage
 guide/cli-reference
+guide/configuration
 ```
 
 ```{toctree}

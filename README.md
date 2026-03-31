@@ -1,12 +1,11 @@
 <!--
 TODO: Replace all placeholders of the form `{{ ... }}` with project-specific values.
 
-- `{{ repo_name }}`          : Repository name (e.g., architekta)
-- `{{ github_user }}`        : GitHub username of the project owner
-- `{{ package_name }}`       : Python package name (import name)
-- `{{ channel_name }}`       : Conda channel name (e.g., eresthanaconda)
-- `{{ contact@example.com }}`: Contact email address
-- `{{ description }}`        : One-line project description
+- `{{ repo_name }}`     : Repository name (e.g., architekta)
+- `{{ github_user }}`   : GitHub username of the project owner
+- `{{ package_name }}`  : Python package name (import name)
+- `{{ channel_name }}`  : Conda channel name (e.g., eresthanaconda)
+- `{{ description }}`   : One-line project description
 
 TODO: Review and adapt all descriptive content to reflect the specific details of the
 project (e.g., feature list, command-line examples, configuration options).
@@ -15,7 +14,7 @@ TODO: Remove sections marked OPTIONAL if they do not apply to the project.
 -->
 # {{ repo_name }}
 
-[![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](#installation)
+[![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](docs/guide/installation.md)
 [![Maintenance](https://img.shields.io/maintenance/yes/2026)]()
 [![Last Commit](https://img.shields.io/github/last-commit/{{ github_user }}/{{ repo_name }})](https://github.com/{{ github_user }}/{{ repo_name }}/commits/main)
 [![Python](https://img.shields.io/badge/python-%E2%89%A53.12-blue)](https://www.python.org/)
@@ -29,12 +28,8 @@ TODO: Remove sections marked OPTIONAL if they do not apply to the project.
 
 - [Overview](#overview)
 - [Features](#features)
-- [Installation](#installation)
 - [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Configuration](#configuration)
 - [Documentation](#documentation)
-- [Support](#support)
 - [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
@@ -42,20 +37,24 @@ TODO: Remove sections marked OPTIONAL if they do not apply to the project.
 ## Overview
 
 <!--
-Provide a 2-4 sentence summary of what the project does and why it exists.
-Then include Motivation and Advantages subsections.
+State what the project does and why it exists in 2-4 sentences.
+The subject of each sentence should be the tool or the problem — not "this project"
+or "this section."
 -->
 
 ### Motivation
 
 <!--
-Explain the problem this project solves. What pain point or gap does it address?
+State the problem or gap that the project addresses.
+Lead with the concrete pain point, not with the tool's response to it.
 -->
 
 ### Advantages
 
 <!--
-List 3-5 key advantages of this project over alternatives or manual approaches.
+List 3-5 concrete advantages over alternatives or manual approaches.
+Each item should name the benefit directly, without preambles such as
+"It provides..." or "This tool introduces...".
 -->
 
 ---
@@ -67,48 +66,12 @@ List 3-5 key advantages of this project over alternatives or manual approaches.
 
 ---
 
-## Installation
-
-### Using pip
-
-Install from the GitHub repository:
-
-```bash
-pip install git+https://github.com/{{ github_user }}/{{ repo_name }}.git
-```
-
-### Using conda
-
-Install from the {{ channel_name }} channel:
-
-```bash
-conda install {{ package_name }} -c {{ channel_name }}
-```
-
-### From source
-
-1. Clone the repository:
-
-      ```bash
-      git clone https://github.com/{{ github_user }}/{{ repo_name }}.git
-      ```
-
-2. Create a dedicated virtual environment and install:
-
-      ```bash
-      cd {{ repo_name }}
-      conda env create -f environment.yml
-      conda activate {{ package_name }}
-      ```
-
----
-
 ## Quick Start
 
 <!--
-Provide a minimal, concrete example that gets the user from zero to a working result.
-This should be copy-pasteable and demonstrate the core value proposition.
-Include both CLI and Python API examples if applicable.
+Provide a minimal, copy-pasteable example that demonstrates the core value.
+Keep the scope narrow: one CLI invocation and/or one Python snippet.
+Detailed command documentation belongs in `docs/guide/cli-reference.md`.
 -->
 
 ### CLI
@@ -127,115 +90,46 @@ import {{ package_name }}
 
 ---
 
-## Usage
-
-### Command Line Interface (CLI)
-
-<!--
-Document the main CLI commands with concrete examples and expected output.
-Show real commands, not just --help. Include at least one end-to-end example.
--->
-
-```sh
-{{ package_name }} --help
-```
-
-### Programmatic Usage
-
-<!--
-Show how to use the package as a Python library. Include import statements,
-object construction, and a representative workflow.
--->
-
-```python
-import {{ package_name }}
-```
-
----
-
-## Configuration
-
-### Environment Variables
-
-| Variable | Description | Default | Required |
-| -------- | ----------- | ------- | -------- |
-| `VAR_1` | Description. | None | Yes |
-| `VAR_2` | Description. | `false` | No |
-
-### Configuration File
-
-Configuration options are specified in YAML files located in the `config/` directory.
-
-The canonical configuration schema is provided in [`config/default.yaml`](config/default.yaml).
-
-```yaml
-var_1: value1
-var_2: value2
-```
-
----
-
 ## Documentation
 
-- [User Guide](https://{{ github_user }}.github.io/{{ repo_name }}/guide/)
-- [API Documentation](https://{{ github_user }}.github.io/{{ repo_name }}/api/)
+| Guide | Content |
+| ----- | ------- |
+| [Installation](docs/guide/installation.md) | Prerequisites, pip/conda/source setup |
+| [Usage](docs/guide/usage.md) | Workflows and detailed examples |
+| [CLI Reference](docs/guide/cli-reference.md) | Full command registry and options |
+| [Configuration](docs/guide/configuration.md) | Configuration files, environment variables, precedence |
+<!-- OPTIONAL -->
+| [Architecture](docs/architecture.md) | Design strategy, module organization, layers |
 
-> [!NOTE]
-> Documentation can also be browsed locally from the [`docs/`](docs/) directory.
-
----
-
-<!-- OPTIONAL: Include for projects with non-trivial internal structure. -->
-## Architecture
-
-<!--
-Describe the high-level module organization and architectural layers.
-Include a table of modules or a diagram if helpful.
--->
-
-| Layer | Modules | Responsibility |
-| ----- | ------- | -------------- |
-| Domain | `module_a` | Core business logic |
-| Application | `module_b` | Use-case orchestration |
-| Infrastructure | `module_c` | File I/O, config loading |
-| Adapters | `cli` | CLI interface |
-
----
-
-## Support
-
-**Issues**: [GitHub Issues](https://github.com/{{ github_user }}/{{ repo_name }}/issues)
-
-**Email**: `{{ contact@example.com }}`
+Full API documentation and rendered guides are also available at
+[{{ github_user }}.github.io/{{ repo_name }}](https://{{ github_user }}.github.io/{{ repo_name }}/).
 
 ---
 
 ## Contributing
 
-Please refer to the [contribution guidelines](CONTRIBUTING.md).
+Contribution guidelines are described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 ## Acknowledgments
 
-### Authors & Contributors
+### Authors
 
 **Author**: @{{ github_user }}
 
-**Contact**: `{{ contact@example.com }}`
+For academic use, the GitHub "Cite this repository" feature generates citations in
+various formats. The [citation metadata](CITATION.cff) file is also available.
 
-For academic use, please cite using the GitHub "Cite this repository" feature to
-generate a citation in various formats.
-
-Alternatively, refer to the [citation metadata](CITATION.cff).
-
+<!-- OPTIONAL -->
 ### Third-Party Dependencies
 
-- **[Library A](link)** -- Purpose
-- **[Library B](link)** -- Purpose
+- **[Library A](link)** -- Purpose.
+- **[Library B](link)** -- Purpose.
 
 ---
 
 ## License
 
-This project is licensed under the terms of the [GNU General Public License v3.0](LICENSE).
+This project is licensed under the terms of the
+[GNU General Public License v3.0](LICENSE).

@@ -8,8 +8,8 @@
 
 | Option | Description |
 | ------ | ----------- |
-| `--version`, `-v` | Display version and exit. |
-| `--help` | Display help and exit. |
+| `--version`, `-v` | Display the version and exit. |
+| `--help` | Display the help message and exit. |
 
 ## Commands
 
@@ -20,3 +20,25 @@ Display version and platform diagnostics.
 ```sh
 {{ package_name }} info
 ```
+
+<!--
+TODO: Document each command with the following structure:
+
+### `command_name`
+
+One-line description of what the command does.
+
+```sh
+{{ package_name }} command_name [OPTIONS] [ARGS]
+```
+
+| Option | Description | Default |
+| ------ | ----------- | ------- |
+| `--option` | Description. | value |
+
+**Example:**
+
+```sh
+{{ package_name }} command_name --option value
+```
+-->
