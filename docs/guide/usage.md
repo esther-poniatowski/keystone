@@ -31,9 +31,9 @@ expected output.
 {{ package_name }} <command> <args>
 ```
 
-## Python API
+## Application Programming Interface
 
-The same functionality is accessible as a Python library.
+The same functionality is accessible as a library.
 
 ```python
 import {{ package_name }}

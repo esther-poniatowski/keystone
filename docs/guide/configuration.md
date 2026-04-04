@@ -1,28 +1,66 @@
 # Configuration
 
-## Configuration File
+<!--
+TODO: Replace this template with project-specific configuration documentation.
 
-{{ package_name }} reads its configuration from YAML files located in the `config/`
-directory. The canonical schema is defined in `config/default.yaml`.
+Document each configuration source the package supports: config files, environment
+variables, and CLI flags. Specify the precedence order if multiple sources overlap.
+-->
+
+## Config Directory
+
+The `config/` directory holds tool and linter configurations, not application
+settings.
+
+### `config/tools/`
+
+External tool settings, each in its native format:
+
+| File | Tool |
+| ---- | ---- |
+| `black.toml` | Black (formatter) |
+| `mypy.ini` | Mypy (type checker) |
+| `pylintrc.ini` | Pylint (linter, production code) |
+| `pylintrc_tests.ini` | Pylint (linter, test code) |
+| `pyrightconfig.json` | Pyright (type checker) |
+| `releaserc.toml` | Semantic Release |
+
+### `config/dictionaries/`
+
+Word lists for the CSpell spell-checker extension:
+
+| File | Scope |
+| ---- | ----- |
+| `project.txt` | Project-specific names and concepts. |
+| `python.txt` | Python names (functions, modules) and programming concepts. |
+| `tools.txt` | Tool-specific names and project management concepts. |
+
+## Application Settings
+
+<!--
+TODO: Document runtime configuration once the package defines it.
+
+### Configuration File
+
+Describe the config file format, location, and schema.
 
 ```yaml
 # Example configuration
-var_1: value1
-var_2: value2
+key: value
 ```
 
-## Environment Variables
+### Environment Variables
 
 | Variable | Description | Default | Required |
 | -------- | ----------- | ------- | -------- |
-| `VAR_1` | Description. | None | Yes |
-| `VAR_2` | Description. | `false` | No |
+| `EXAMPLE_VAR` | Description. | None | Yes |
 
-## Precedence
+### Precedence
 
-Configuration values resolve in the following order (highest priority first):
+Configuration values resolve in this order (highest priority first):
 
 1. Command-line arguments
 2. Environment variables
-3. Project configuration file (`config/default.yaml`)
+3. Configuration file
 4. Built-in defaults
+-->
