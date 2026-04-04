@@ -80,7 +80,7 @@ Detailed command documentation belongs in `docs/guide/cli-reference.md`.
 {{ package_name }} --help
 ```
 
-### Python
+### Application Programming Interface
 
 ```python
 import {{ package_name }}
