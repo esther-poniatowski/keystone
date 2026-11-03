@@ -15,7 +15,7 @@ TODO: Remove sections marked OPTIONAL if they do not apply to the project.
 # {{ repo_name }}
 
 [![Conda](https://img.shields.io/badge/conda-{{ channel_name }}--channel-blue)](docs/guide/installation.md)
-[![Maintenance](https://img.shields.io/maintenance/yes/2026)]()
+![Maintenance](https://img.shields.io/maintenance/yes/2026)
 [![Last Commit](https://img.shields.io/github/last-commit/{{ github_user }}/{{ repo_name }})](https://github.com/{{ github_user }}/{{ repo_name }}/commits/main)
 [![Python](https://img.shields.io/badge/python-%E2%89%A53.12-blue)](https://www.python.org/)
 [![License: GPL](https://img.shields.io/badge/License-GPL--3.0-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
