@@ -6,6 +6,9 @@ on:
     branches: [main]
 jobs:
   test:
+    # The template repository holds unrendered placeholders, so only a scaffolded project runs
+    # the checks; the docs job depends on this one and is skipped with it.
+    if: github.repository != 'esther-poniatowski/keystone'
     runs-on: ubuntu-latest
     strategy:
       matrix:
