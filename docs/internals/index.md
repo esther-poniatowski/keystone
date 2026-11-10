@@ -7,4 +7,5 @@ Developer documentation for {{ package_name }}'s architecture and implementation
 
 architecture
 design-principles
+cli-conventions
 ```
