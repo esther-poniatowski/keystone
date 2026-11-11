@@ -131,11 +131,16 @@ below the root:
   relative to the root, as every path of that file.
 - **Ignore rules.** A repository excludes `build/` and each `.<tool>/` from version control.
 
-*Exceptions.* Three constructions keep another place:
+*Exceptions.* Four constructions keep another place:
 
-- a build that a tool writes for each document, in a folder beside the source of the document,
-  such as `.ktisma_build/` of Ktisma: the researcher reads the log of a document where the document
-  lies. The name of that folder stays configurable;
+- the build that a tool writes for each document, in a folder beside the source of the document,
+  such as `.ktisma_build/` of Ktisma, and the finished document that the tool routes from it: the
+  researcher reads the log of a document where the document lies, and the routing rules of the
+  configuration place the finished document. The name of the folder and the routes stay
+  configurable;
+- a receipt or an ownership marker that describes a set of files and changes with them, such as
+  the installation receipt of Kataskeue in `.obsidian/` or the marker `.eutaxis-owned.json` of an
+  installed skill: it lies beside the files it describes, since the tool replaces both in one step;
 - a temporary file that a tool renames over its target after writing, which lies beside the
   target, since a rename replaces a file atomically only within one file system. The tool deletes
   it when the write fails;
