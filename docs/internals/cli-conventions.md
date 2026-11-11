@@ -23,8 +23,21 @@ reuse a name reserved below. Each rule below states the principle that selects i
 | `-v`, `--version` | Print the version of the tool. |
 | `--verbose` / `-q`, `--quiet` | Raise or lower the amount of output. `--verbose` has no short form. |
 
-The exit status is 0 on success, 1 when a check or a validation finds a problem, and 2 on a usage
-or configuration error.
+## Exit Statuses
+
+| Status | Meaning |
+| --- | --- |
+| 0 | The command succeeded. |
+| 1 | A check or a validation found a problem, or the researcher declined a confirmation. |
+| 2 | The command line or the settings are wrong. |
+| 3 | The environment prevented the command: an unreachable service, a missing prerequisite, a held lock. |
+
+A tool may give a status above 3 to a failure of its own, such as a held lock or an internal error,
+and its documentation lists each such status.
+
+*Principle.* A script must tell a command to correct (status 2) from an environment to repair
+before a new attempt (status 3). A declined confirmation leaves the requested action undone, so a
+command chained after it with `&&` must not run.
 
 ## Root
 
