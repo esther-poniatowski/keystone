@@ -39,7 +39,7 @@ steps to set up a development environment:
 2. Create a virtual environment containing the development dependencies:
 
    ```sh
-   cd  {{ repo_name }}
+   cd {{ repo_name }}
    conda env create -f environment.yml
    ```
 
@@ -50,7 +50,7 @@ steps to set up a development environment:
 
    ```sh
    conda activate {{ env_name }}
-   pip install -e /src/{{ package_name }}
+   pip install -e .
    ```
 
 ### Using the Commit Message Template

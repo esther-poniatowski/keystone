@@ -42,7 +42,7 @@ urls = {homepage = "https://github.com/{{ github_user }}/{{ repo_name }}"}
 requires-python = ">=3.12"
 
 dependencies = [
-
+    "typer",
 ]
 
 
