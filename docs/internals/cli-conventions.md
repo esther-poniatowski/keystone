@@ -116,6 +116,36 @@ file, so that the file moves between the root and `config/tools/` without an edi
 *Principle.* Regenerating a derived file loses nothing, whereas overwriting any other file may lose
 work. A command run by a script must never wait for an answer that no one will give.
 
+## Generated Files
+
+A tool writes two kinds of file that no researcher authors, and gives each kind its own folder
+below the root:
+
+| Kind | Examples | Default folder |
+| --- | --- | --- |
+| Result, read by the researcher or by continuous integration | report, check log, built document | `build/<tool>/` |
+| State, read by the tool alone | cache, fetched copy, lock, transaction journal, backup | `.<tool>/` |
+
+- **Configuration.** The configuration file of the tool can change each default folder, and an
+  option of the command line may override it. A folder written in the configuration file is
+  relative to the root, as every path of that file.
+- **Ignore rules.** A repository excludes `build/` and each `.<tool>/` from version control.
+
+*Exceptions.* Three constructions keep another place:
+
+- a build that a tool writes for each document, in a folder beside the source of the document,
+  such as `.ktisma_build/` of Ktisma: the researcher reads the log of a document where the document
+  lies. The name of that folder stays configurable;
+- a temporary file that a tool renames over its target after writing, which lies beside the
+  target, since a rename replaces a file atomically only within one file system. The tool deletes
+  it when the write fails;
+- state that belongs to the user rather than to a project, such as the commands installed by
+  Eutaxis, which lies in `~/.<tool>/`.
+
+*Principle.* Results stay visible, under one folder that one ignore rule excludes and that can
+always be deleted. State stays hidden, in one folder per tool, so that a listing of the root shows
+only what the researcher works on, and deleting the folder of one tool resets that tool alone.
+
 ## Renaming an Option
 
 The tools serve consumers that the researcher controls. A renamed option, environment variable or
