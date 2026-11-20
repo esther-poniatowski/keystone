@@ -39,36 +39,30 @@ and its documentation lists each such status.
 before a new attempt (status 3). A declined confirmation leaves the requested action undone, so a
 command chained after it with `&&` must not run.
 
-## Root
+## Root and Configuration File
 
-A tool that works on a project resolves its root in this order, and stops at the first answer:
+A tool resolves its root and locates its configuration file through
+[Hodegos](https://github.com/esther-poniatowski/hodegos). The
+[specification of Hodegos](https://github.com/esther-poniatowski/hodegos/blob/main/docs/specification.md)
+fixes four rules:
 
-1. the option `--root`;
-2. the environment variable `<TOOL>_ROOT`, such as `KTISMA_ROOT`;
-3. the nearest ancestor of the current folder that holds the configuration file of the tool, in
-   `config/tools/` or at its own level;
-4. the current folder.
+- the order of the sources of the root;
+- the places of the configuration file;
+- the declaration `hodegos.yml`, listing the folders that a project adds to these places;
+- the errors of a discovery.
 
-A tool that stacks one configuration file per folder, such as Ktisma, takes the outermost ancestor at
-step 3 instead, and its documentation says so. A tool without a configuration file skips step 3.
+A tool declares its convention once, in its own code:
 
-*Principle.* An explicit value overrides an implicit one, and an environment variable serves editors
-and continuous integration without a change of command. The search of step 3 lets a command run
-from any subfolder of a project, as Git and pytest do.
+- its name;
+- the extensions of its file;
+- whether it stacks one file per folder.
 
-## Configuration File
+Hodegos leaves one rule to the tool. Without any configuration file, the tool runs on its built-in
+defaults, unless it needs a value that no default supplies. A file named by `--config` and absent is
+an error.
 
-- **Name.** The configuration file of a tool is named after the tool: `<tool>.yml` for a file in YAML,
-  `<tool>.toml` for a file in TOML. The name carries no leading dot, and the files of a tool that
-  stacks one file per folder carry the same name.
-- **Place.** Without `--config`, the tool reads `config/tools/<tool>.<ext>` below the root, or
-  `<tool>.<ext>` at the root. When both exist, the tool stops with an error that names both.
-- **Absence.** Without any configuration file, the tool runs on its built-in defaults. A file named by
-  `--config` and absent is an error.
-
-*Principle.* One name per tool makes the file recognizable in any listing. An error on two
-competing files fails fast, where a silent precedence would apply a file that the researcher does
-not expect.
+*Principle.* One implementation of the discovery, with its conformance cases, keeps every tool
+consistent, where a rule restated in each tool drifts.
 
 ## File Formats
 
@@ -100,7 +94,7 @@ the file wherever it sits, and a tool rejects the file of another tool by its ty
 
 *Principle.* A shell completes a path from the current folder, so a path typed on the command line
 must be read from there. A path written in a configuration file must not depend on the place of that
-file, so that the file moves between the root and `config/tools/` without an edit.
+file, so that the file moves between the places that Hodegos searches without an edit.
 
 ## Writing Files
 
