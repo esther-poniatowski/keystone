@@ -44,12 +44,13 @@ command chained after it with `&&` must not run.
 A tool resolves its root and locates its configuration file through
 [Hodegos](https://github.com/esther-poniatowski/hodegos). The
 [specification of Hodegos](https://github.com/esther-poniatowski/hodegos/blob/main/docs/specification.md)
-fixes four rules:
+fixes three rules:
 
 - the order of the sources of the root;
-- the places of the configuration file;
-- the declaration `hodegos.yml`, listing the folders that a project adds to these places;
+- the places of the configuration file: the root, `.config/` and `config/`;
 - the errors of a discovery.
+
+A configuration file kept anywhere else is named with `--config`.
 
 A tool declares its convention once, in its own code:
 
